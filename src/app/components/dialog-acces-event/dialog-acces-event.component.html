@@ -1,0 +1,24 @@
+<form [formGroup]="dialogForm" (ngSubmit)="onSubmit()">
+<h1 mat-dialog-title>Accès à un nouvel évenement</h1>
+
+  <div mat-dialog-content>
+    <mat-form-field appearance="fill">
+        <mat-label>Entrez l'id de l'évenement</mat-label>
+        <input matInput formControlName="id">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Entrez votre email</mat-label>
+      <input type="email" matInput formControlName="email">
+    </mat-form-field>
+    <p class ="alert" *ngIf="email()?.errors && email()?.touched">L'adresse mail n'est pas valide</p>
+    <mat-form-field appearance="fill">
+      <mat-label>Entrez le mot de passe de l'évenement</mat-label>
+      <input type="password" matInput formControlName="pwd">
+    </mat-form-field>
+    <p class ="alert" *ngIf="pwd()?.errors && pwd()?.touched">Le mot de passe doit faire au minimum 6 caractères</p>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Retour</button>
+    <button mat-button type="submit" [disabled]="dialogForm.invalid">Ok</button>
+  </div>
+</form>

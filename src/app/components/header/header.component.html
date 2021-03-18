@@ -1,0 +1,25 @@
+<p>
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+        <span><a mat-button class="toolTitle" routerLink="home">Event`Planner</a></span>
+        <span class="spacer"></span>
+        <button mat-icon-button title="Example icon-button with menu icon" 
+        (click)="showHide()" *ngIf="router.url != '/home'">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </mat-toolbar-row>
+  
+      <mat-toolbar-row *ngIf="statusShow">
+        <span><button mat-button class="toolButton">Place</button></span>
+      </mat-toolbar-row>
+      <mat-toolbar-row *ngIf="statusShow">
+        <span><button mat-button class="toolButton">Necessities</button></span>
+      </mat-toolbar-row>
+      <mat-toolbar-row *ngIf="statusShow">
+        <span><button mat-button class="toolButton">Photos</button></span>
+      </mat-toolbar-row>
+      <mat-toolbar-row *ngIf="statusShow">
+        <span><button mat-button class="toolButton">Choice</button></span>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </p>

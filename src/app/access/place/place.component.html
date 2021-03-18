@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-md-6">
+        <mat-card class="card" >
+            <mat-card-header class="header">
+                <mat-card-title > Informations </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="row" *ngFor="let element of info">
+                    <div class="col-md-3">
+                        <mat-icon color="accent" size="1000%">{{element.icon}}</mat-icon>
+                    </div>
+                    <div class="col-md-9" class="text-center">
+                        {{ element.content }}
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="col-md-6">
+        <mat-card class="card">
+            <mat-card-header class="header">
+                <mat-card-title> Map </mat-card-title>  
+            </mat-card-header>
+            <mat-card-content>
+                <agm-map [latitude]="lat" [longitude]="long">
+                    <agm-marker [latitude]="lat" [longitude]="long"></agm-marker>
+                </agm-map>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
