@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import firebase from 'firebase';
 import { Subscription } from 'rxjs';
 import { ShowEventService } from './services/show-event.service';
+import {environment} from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +21,7 @@ export class AppComponent implements OnInit, OnDestroy{
   constructor(private showEventService : ShowEventService,
               private router : Router){
     const firebaseConfig = {
-      apiKey: "AIzaSyDZo_aqFLvHvPJcLnjMQOVju33KlbAw8_s",
+      apiKey: environment.apiKey,
       authDomain: "event-planner-31fde.firebaseapp.com",
       projectId: "event-planner-31fde",
       storageBucket: "event-planner-31fde.appspot.com",
