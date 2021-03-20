@@ -27,6 +27,7 @@ import { ChoiceComponent } from './access/choice/choice.component';
 import { PhotosComponent } from './access/photos/photos.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AuthGuardService } from './services/auth-guard.service';
+import { environment } from 'src/environments/environment';
 
 
 
@@ -49,7 +50,7 @@ import { AuthGuardService } from './services/auth-guard.service';
     ReactiveFormsModule,
 
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDZo_aqFLvHvPJcLnjMQOVju33KlbAw8_s'
+      apiKey: environment.apiKey
     }),
 
     MatCardModule,
